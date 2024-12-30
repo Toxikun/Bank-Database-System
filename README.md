@@ -2,6 +2,7 @@
  That is a Bank database such that user can sign in or register as a customer or an employee. Developed by using java and mysql.
 
 Since it is made with java and sql codes together it is a system that does not work without sql. SQL codes:
+
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `project`.`account_view` AS select `a`.`Account_No` AS `Account_No`,`c`.`Cust_ID` AS `Cust_ID`,`c`.`name` AS `Customer_Name`,`c`.`Surname` AS `Customer_Surname`,`a`.`Balance` AS `Balance`,`a`.`B_Name` AS `Bank_Name`,`b`.`Address` AS `Bank_Address`,`b`.`City` AS `Bank_City` from ((`project`.`account` `a` join `project`.`customer` `c` on((`a`.`Cust_ID` = `c`.`Cust_ID`))) join `project`.`bank` `b` on((`a`.`B_Name` = `b`.`B_Name`)));
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `project`.`transaction_view` AS select `project`.`customer`.`name` AS `Name`,`project`.`customer`.`Cust_ID` AS `Cust_ID`,`project`.`account`.`Account_No` AS `Account_No`,`project`.`account`.`Balance` AS `Balance`,`project`.`transaction`.`LoanAmount` AS `LoanAmount` from ((`project`.`account` join `project`.`customer` on((`project`.`account`.`Cust_ID` = `project`.`customer`.`Cust_ID`))) join `project`.`transaction` on((`project`.`account`.`Account_No` = `project`.`transaction`.`AccNo`)));
 CREATE TABLE `customer` (
