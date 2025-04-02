@@ -51,7 +51,7 @@ public class CustomerLoan {
 			public void actionPerformed(ActionEvent e) {
 				amountString = amountField.getText();
 				
-				try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "orkun123")){
+				try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:AAAA/project", "root", "password")) {//To use this you need to change pathway, root and password
 					String query="Insert into project.Transaction values("+ amountString +","+LoginUser.accountNo+");";
 					System.out.println(query);
 					con.createStatement().executeUpdate(query);
