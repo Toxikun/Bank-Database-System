@@ -87,7 +87,7 @@ public static String additionalBalanceString;
 		        String amountString = amountField.getText();
 		        
 
-		        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "orkun123")) {
+		        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:AAAA/project", "root", "password")) {//To use this you need to change pathway, root and password
 		            String query = "UPDATE Account SET Balance = Balance -"+ amountString+" WHERE Account_No = "+LoginUser.accountNo;
 		            PreparedStatement pstmt = con.prepareStatement(query);
 		            
@@ -108,7 +108,7 @@ public static String additionalBalanceString;
 		            JOptionPane.showMessageDialog(frame, "Invalid amount of money");
 		        }
 
-		        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "orkun123")) {
+		        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:AAAA/project", "root", "password")) {//To use this you need to change pathway, root and password
 		            String query = "UPDATE project.Account SET Balance = Balance +"  +amountString	 + " WHERE Account_No = " + gönderilecekAccountString;
 		           
 		            System.out.println(query);
