@@ -58,7 +58,7 @@ public class LoginUser {
             @Override
             public void actionPerformed(ActionEvent e) {
             girdi = textField.getText();
-            try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "orkun123")) {
+            try (Connection con = DriverManager.getConnection(("jdbc:mysql://localhost:AAAA/project", "root", "password")) {//To use this you need to change pathway, root and password
                 String query = "select * from project.Customer where Cust_ID=" + girdi;
                 java.sql.Statement statement = con.createStatement();
                 ResultSet resultSet = statement.executeQuery(query);
