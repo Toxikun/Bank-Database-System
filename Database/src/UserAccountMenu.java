@@ -88,7 +88,7 @@ public class UserAccountMenu {
 		btnNewButton_3.setBounds(334, 10, 150, 21);
 		frame.add(btnNewButton_3);
 		  try (
-              	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "orkun123")) {
+              	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:AAAA/project", "root", "password")) {//To use this you need to change pathway, root and password
               	String query ="select Account_No from Account where Cust_ID =" + LoginUser.userID;
               	java.sql.Statement statement = con.createStatement();
               	statement.executeQuery(query);
