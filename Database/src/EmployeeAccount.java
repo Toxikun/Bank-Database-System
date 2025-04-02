@@ -136,8 +136,8 @@ public class EmployeeAccount {
     }
 
     private void populateUserTable() {
-        String sql = "SELECT* FROM Customer"; // Adjust the SQL query based on your database schema
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "orkun123");
+        String sql = "SELECT* FROM Customer"; 
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:AAAA/project", "root", "password")) {//To use this you need to change pathway, root and password
              PreparedStatement pstmt = conn.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery()) {
 
@@ -162,7 +162,7 @@ public class EmployeeAccount {
             String userId = viewJTable.getValueAt(selectedRow, 0).toString();
             // Fetch loan details for the selected user and populate the loanTable
             String sql = "SELECT LoanAmount, Account_No FROM transaction_view WHERE Account_No = ?";
-            try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "orkun123");
+            try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:AAAA/project", "root", "password");
                  PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setString(1, userId);
                 ResultSet rs = pstmt.executeQuery();
@@ -202,7 +202,7 @@ public class EmployeeAccount {
         if (row != -1) {
             int accountNo = Integer.parseInt(loanTable.getValueAt(row, 1).toString());
             String sql = "DELETE FROM transaction WHERE Account_No = ?";
-            try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "orkun123");
+            try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:AAAA/project", "root", "password");
                  PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setInt(1, accountNo);
                 int affectedRows = pstmt.executeUpdate();
@@ -224,7 +224,7 @@ public class EmployeeAccount {
             double amount = Double.parseDouble(moneyTextField.getText());
             int userId = Integer.parseInt(userIDField.getText());
             String sql = "UPDATE project.Account SET Balance = Balance + ? WHERE Cust_ID = ?";
-            try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "orkun123");
+            try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:AAAA/project", "root", "password");
                  PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setDouble(1, amount);
                 pstmt.setInt(2, userId);
@@ -248,7 +248,7 @@ public class EmployeeAccount {
         if (row != -1) {
             int userId = Integer.parseInt(viewJTable.getValueAt(row, 0).toString());
             String sql = "DELETE FROM Customer WHERE Cust_ID = ?";
-            try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "orkun123");
+            try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:AAAA/project", "root", "password");
                  PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setInt(1, userId);
                 int affectedRows = pstmt.executeUpdate();
