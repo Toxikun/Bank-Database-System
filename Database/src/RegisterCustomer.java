@@ -165,7 +165,7 @@
 	            public void actionPerformed(ActionEvent e) {
 	            	
 	                    try (
-	                    	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "orkun123")) {
+	                    	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:AAAA/project", "root", "password")) {//To use this you need to change pathway, root and password
 	                    	String query = "Insert into project.Customer values("+idField.getText()+",'"+nameField.getText()+"','"+surnameField.getText()+"',"+ageField.getText()+","+mNoField.getText()+",'"+emailField.getText()+"','"+adressField.getText()+"')";
 	                 
 	                    con.createStatement().executeUpdate(query);
@@ -175,7 +175,7 @@
 	                        ex.printStackTrace();
 	                    }
 	                    try (
-		                    	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "orkun123")) {
+		                    	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:AAAA/project", "root", "password")) {
 		                    	String query2="Insert into project.Account (Cust_ID) values("+ idField.getText()+")";
 
 		                    	con.createStatement().executeUpdate(query2);
