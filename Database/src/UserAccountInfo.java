@@ -143,10 +143,10 @@ public class UserAccountInfo {
         frame.add(btnNewButton);
     }
 
-    private void updateUserAccountInfo(String field, String value) {
-        String url = "jdbc:mysql://localhost:3306/project";
+    private void updateUserAccountInfo(String field, String value) {//Change url, username and password according to your sql database to use code
+        String url = "jdbc:mysql://localhost:AAAA/project";
         String username = "root";
-        String password = "orkun123";
+        String password = "password";
 
         String sql = "UPDATE Customer SET " + field + " = ? WHERE Cust_ID = ?";
 
