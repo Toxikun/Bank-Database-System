@@ -1,5 +1,5 @@
 # Bank Database System
- That is a Bank database such that user can sign in or register as a customer or an employee. Developed by using java and mysql.
+ That is a Bank database such that user can sign in or register as a customer or an employee. Developed by using java and mysql. Since it is a LOCAL database project, you need to change the pathway, password and root according to your database properties.
 
 Since it is made with java and sql codes together it is a system that does not work without sql. SQL codes:
 
