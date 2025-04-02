@@ -146,7 +146,7 @@ public class RegisterEmployee {
 	            public void actionPerformed(ActionEvent e) {
 	            	
 	                    try (
-	                    	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "orkun123")) {
+	                    	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:AAAA/project", "root", "password")) {//To use this you need to change pathway, root and password
 	                    	String query = "INSERT INTO project.Employee VALUES (" + idField.getText() + ", '" + nameField.getText() + "', '" + surnameField.getText() + "', '" + mNoField.getText() + "', '" + adressField.getText() + "', '" + secuField.getText() + "')";
 
 	                    	con.createStatement().executeUpdate(query);
